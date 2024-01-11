@@ -7,6 +7,7 @@ class Program
         int val = 1;
         while (val > 0)
         {
+            //simon was here
             Console.WriteLine("Välkommen till multiprogrammet som gör det mesta. Välj vilket delprogram du vill köra");
             Console.WriteLine("1. Räkna ut hypotenusan på en triangel");
             Console.WriteLine("2. Räkna ut en rektangels area");
