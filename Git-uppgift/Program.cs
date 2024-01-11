@@ -204,7 +204,7 @@ class Program
 
     static float FuncRArea(float bas, float hojd)
     {
-        float area = 0;
+        float area = 1;
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
         return area;
