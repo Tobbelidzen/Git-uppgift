@@ -25,6 +25,7 @@ class Program
 
             Console.Write("Skriv in ditt val: ");
             val = int.Parse(Console.ReadLine());
+            //Här kommenterar Tobbe något orelevant!
 
             switch (val)
             {
@@ -191,6 +192,7 @@ class Program
                         Console.WriteLine("Välkommen tillbaka");
                         break;
                     }
+                    //Oj en kommentar till, vad konstigt..
             }
         }
     }
