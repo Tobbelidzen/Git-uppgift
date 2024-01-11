@@ -196,7 +196,7 @@ class Program
     }
     static float FuncHypotenusa(float bas, float hojd)
     {
-        float hypotenusa = 0;
+        float hypotenusa = (bas * bas) + (hojd * hojd);
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
         return hypotenusa;
@@ -204,7 +204,7 @@ class Program
 
     static float FuncRArea(float bas, float hojd)
     {
-        float area = 0;
+        float area = bas * hojd;
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
         return area;
