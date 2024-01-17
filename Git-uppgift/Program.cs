@@ -196,17 +196,23 @@ class Program
     }
     static float FuncHypotenusa(float bas, float hojd)
     {
-        float hypotenusa = 0;
+        
+        //float hypotenusa = 0;
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
+        //MH: Pythagoras sats, A*2 + B*2 = C*2
+        float hypotenusa = bas * bas + hojd * hojd;
         return hypotenusa;
     }
 
     static float FuncRArea(float bas, float hojd)
     {
-        float area = 0;
+        //float area = 0;
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
+        
+        //MH: Bas * Höjd 
+        float area = bas * hojd;
         return area;
     }
 
@@ -215,6 +221,11 @@ class Program
         float medel = 0;
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
+        
+        // MH: Medelvärde = Värdet av alla tal / Antalet tal
+        /* få ut alla nummer för att sedan slå ihop dom för total värdet, 
+        listatotal = 
+        float medel = listaMedVarden / antal;*/
         return medel;
     }
 
