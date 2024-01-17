@@ -197,6 +197,7 @@ class Program
     static float FuncHypotenusa(float bas, float hojd)
     {
         float hypotenusa = 0;
+
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
         return hypotenusa;
@@ -213,6 +214,13 @@ class Program
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
+        float temp = 0;
+        for (int i = 0; i < antal; i++)
+            {
+                temp += listaMedVarden[i];
+            }
+        medel = temp / antal;
+        
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
         return medel;
@@ -284,6 +292,7 @@ class Program
     static string FuncCeasarCrypt(string mening, int nummer)
     {
         string krypt = "";
+        
         // Skapa en funktion som krypterar en sträng med hjälp av ceasarkryptering.
         // Ceasar-kryptering fungerar på så sätt att man tar en bokstav i taget och flyttar fram den ett visst antal bokstäver framåt.
         // Om jag vill göra en kryptering på en sträng behöver jag först välja antalet tecken jag vill flytta i strängen. I mitt exempel väljer jag 10 steg.
