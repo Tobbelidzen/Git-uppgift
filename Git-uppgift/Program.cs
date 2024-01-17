@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 class Program
 {
@@ -22,7 +23,7 @@ class Program
             Console.WriteLine("12. Dekryptera en text som använder ceasarkryptering");
             Console.WriteLine("0. Avsluta programmet");
 
-
+            
             Console.Write("Skriv in ditt val: ");
             val = int.Parse(Console.ReadLine());
 
@@ -199,7 +200,10 @@ class Program
         float hypotenusa = 0;
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
-        return hypotenusa;
+        double pow_tt = Math.Pow(bas, 2);
+        double pow_tp = Math.Pow(hojd, 2);
+        hypotenusa = (float)pow_tp + (float)pow_tt;
+        return (float)Math.Sqrt(hypotenusa);
     }
 
     static float FuncRArea(float bas, float hojd)
