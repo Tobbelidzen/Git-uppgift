@@ -246,6 +246,16 @@ class Program
     static bool FuncIsPrime(int nummer)
     {
         bool test = false;
+        //Prim tal kan bara delas med sig själv och 1.
+        for (int i = 2; i < nummer/2; i++)
+        {          
+            if (nummer % i == 0)
+            {
+                return false;
+            }
+            test = true;
+            //Om nummret går att / med i ska den + en counter. Om counter = 2 Test blir då = true Tims ideé. 
+        }
         // Gör en funtion som kollar om en siffra är ett primtal. Om det är ett primtal skicka tillbaka "True", annars "False".
         return test;
     }
