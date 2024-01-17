@@ -196,11 +196,18 @@ class Program
     }
     static float FuncHypotenusa(float bas, float hojd)
     {
-        float hypotenusa = 0;
+        double hypotenusa = 0;
+        double bas2 = Math.Pow(bas, 2);
+        double hojd2 = Math.Pow(hojd, 2);
+        double powhypotenusa = bas2 + hojd2;
+        hypotenusa = Math.Sqrt(powhypotenusa);
+
+
+
 
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
-        return hypotenusa;
+        return (float)hypotenusa;
     }
 
     static float FuncRArea(float bas, float hojd)
