@@ -202,17 +202,17 @@ class Program
         return hypotenusa;
     }
 
-    static float FuncRArea(float bas, float hojd)
+    static float FuncRArea(float sida1, float sida2)
     {
         float area = 0;
-        // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
-        // Returnera arean
+        area = sida1 * sida2;
         return area;
     }
 
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
+        medel = listaMedVarden / antal;
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
         return medel;
