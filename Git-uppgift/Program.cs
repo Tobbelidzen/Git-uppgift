@@ -204,6 +204,7 @@ class Program
         double pow_tp = Math.Pow(hojd, 2);
         hypotenusa = (float)pow_tp + (float)pow_tt;
         return (float)Math.Sqrt(hypotenusa);
+        //Här har Erik jobbat hårt
     }
 
     static float FuncRArea(float bas, float hojd)
