@@ -199,7 +199,10 @@ class Program
         float hypotenusa = 0;
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
-        return hypotenusa;
+         hypotenusa = ((float)(Math.Pow(bas, 2) + Math.Pow(hojd, 2)));
+         hypotenusa = (float) (Math.Sqrt(Math.Pow(bas, 2) + Math.Pow(bas, 2)));
+         return hypotenusa;
+        
     }
 
     static float FuncRArea(float bas, float hojd)
