@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 class Program
 {
@@ -197,6 +199,9 @@ class Program
     static float FuncHypotenusa(float bas, float hojd)
     {
         float hypotenusa = 0;
+    
+        hypotenusa = (float)Math.Sqrt(bas * bas + hojd * hojd);
+
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
         return hypotenusa;
@@ -205,6 +210,9 @@ class Program
     static float FuncRArea(float bas, float hojd)
     {
         float area = 0;
+
+        area = bas * hojd;
+
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
         return area;
@@ -213,6 +221,9 @@ class Program
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
+
+
+
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
         return medel;
@@ -229,6 +240,13 @@ class Program
 
     static void FuncDelay(int sekunder)
     {
+        for(int i = 0;i < sekunder; i++)
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine(".");
+        }
+
+
         // Skapa en funktion som ger en fördröjning på så många sekunder som användaren anger.
         // Vid varje sekunds fördröjning ska funktionen skriva ut en punkt (ex: .... <- efter 4 sec)
     }
@@ -247,6 +265,15 @@ class Program
     {
         bool test = false;
         //Prim tal kan bara delas med sig själv och 1.
+        if (nummer <= 1)
+        {
+            return false;
+        }
+        if (nummer <= 3)
+        {
+            return true;
+        }
+
         for (int i = 2; i < nummer/2; i++)
         {          
             if (nummer % i == 0)
