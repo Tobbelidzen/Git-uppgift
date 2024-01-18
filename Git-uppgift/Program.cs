@@ -197,13 +197,13 @@ class Program
             }
         }
     }
-    static float FuncHypotenusa(float bas, float hojd)
+    static float FuncHypotenusa(double bas, double hojd)
     {
         float hypotenusa = 0;
-        double bas2 = Math.Pow(bas, 2);
-        double hojd2 = Math.Pow(hojd, 2);
-        double powhypnotenusa = bas2 + hojd2;
-        hypotenusa = Math.Sqrt(powhypnotenusa);
+        //double bas2 = Math.Pow(bas, 2);
+        //double hojd2 = Math.Pow(hojd, 2);
+        //double powhypnotenusa = bas2 + hojd2;
+        //hypotenusa = Math.Sqrt(powhypnotenusa);
 
         return hypotenusa;
     }
@@ -220,11 +220,14 @@ class Program
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
-        //for (int i = 0; i < listaMedelVarden[i]; i++)
-        //{
+        float temp = 0;
+        for (int i = 0; i < antal; i++)
+        {
+            temp += listaMedVarden[i];
 
-        //}
-        //medel = listaMedelVarde / antal;
+
+        }
+        medel = temp / antal;
         return medel;
     }
 
