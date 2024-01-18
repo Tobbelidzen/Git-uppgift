@@ -201,7 +201,8 @@ class Program
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
         //MH: Pythagoras sats, A*2 + B*2 = C*2
-        float hypotenusa = bas * bas + hojd * hojd;
+        float hypotenusa2 = bas * bas + hojd * hojd;
+        float hypotenusa = (int)Math.Sqrt(hypotenusa2);
         return hypotenusa;
     }
 
@@ -221,11 +222,14 @@ class Program
         float medel = 0;
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
-        
+
         // MH: Medelvärde = Värdet av alla tal / Antalet tal
-        /* få ut alla nummer för att sedan slå ihop dom för total värdet, 
-        listatotal = 
-        float medel = listaMedVarden / antal;*/
+        // Få ut alla nummer för att sedan slå ihop dom för total värdet, 
+        for (int i = 0; i < antal;i++)
+        {
+
+        }
+       //float medel = listaMedVarden / antal;
         return medel;
     }
 
