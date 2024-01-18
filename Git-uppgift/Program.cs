@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using System;
+using System.Threading;
+
 
 class Program
 {
@@ -197,24 +200,31 @@ class Program
     static float FuncHypotenusa(float bas, float hojd)
     {
         float hypotenusa = 0;
-        // Gör en funktion som räknar ut hypotenusan när
-        // man får reda på basen och höjden av en rätvinklig triangel
+        double bas2 = Math.Pow(bas, 2);
+        double hojd2 = Math.Pow(hojd, 2);
+        double powhypnotenusa = bas2 + hojd2;
+        hypotenusa = Math.Sqrt(powhypnotenusa);
+
         return hypotenusa;
     }
 
-    static float FuncRArea(float bas, float hojd)
+    static float FuncRArea(float sida1, float sida2)
     {
         float area = 0;
-        // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
-        // Returnera arean
+        area = sida1 * sida2;
+
+
         return area;
     }
 
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
-        // Du får en lista av användaren med massa heltals-siffror.
-        // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
+        //for (int i = 0; i < listaMedelVarden[i]; i++)
+        //{
+
+        //}
+        //medel = listaMedelVarde / antal;
         return medel;
     }
 
@@ -229,10 +239,15 @@ class Program
 
     static void FuncDelay(int sekunder)
     {
-        // Skapa en funktion som ger en fördröjning på så många sekunder som användaren anger.
-        // Vid varje sekunds fördröjning ska funktionen skriva ut en punkt (ex: .... <- efter 4 sec)
-    }
+        
+        for (int i = 0; i < sekunder; i++)
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine(".");
+        }
 
+    }
+    
     static string FuncSortera(string ord)
     {
         string sorteradString = "";
