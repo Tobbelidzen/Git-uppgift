@@ -243,7 +243,7 @@ class Program
         for(int i = 0;i < sekunder; i++)
         {
             Thread.Sleep(1000);
-            Console.WriteLine(".");
+            Console.WriteLine(1 + i + ".");
         }
 
 
@@ -254,6 +254,9 @@ class Program
     static string FuncSortera(string ord)
     {
         string sorteradString = "";
+
+
+
         // Skapa en funktion som sorterar en sträng som kommer in i bokstavsordning.
         // Strängen som kommer in kommer innehålla flera ord, och det är de som ska sorteras i bokstavsordning.
         // Orden i strängen som kommer in kommer vara separerade med ett bindestreck, se exempel nedan.
