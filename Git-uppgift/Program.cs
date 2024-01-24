@@ -206,6 +206,8 @@ class Program
     {
         float area = 0;
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
+        area = bas * hojd; 
+
         // Returnera arean
         return area;
     }
