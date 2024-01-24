@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
+using static System.Net.Mime.MediaTypeNames;
+using System.Threading;
 
 class Program
 {
@@ -8,12 +12,12 @@ class Program
         while (val > 0)
         {
             Console.WriteLine("Välkommen till multiprogrammet som gör det mesta. Välj vilket delprogram du vill köra");
-            Console.WriteLine("1. Räkna ut hypotenusan på en triangel");
-            Console.WriteLine("2. Räkna ut en rektangels area");
-            Console.WriteLine("3. Räkna ut medelvärdet av en lista med värden");
-            Console.WriteLine("4. Är en sträng/mening ett palindrom?");
-            Console.WriteLine("5. Skapa delay på x antal sekunder");
-            Console.WriteLine("6. Sortera några ord i bokstavsordning");
+            Console.WriteLine("1. Räkna ut hypotenusan på en triangel");//Problemlösning_1
+            Console.WriteLine("2. Räkna ut en rektangels area"); //Problemlösning_2
+            Console.WriteLine("3. Räkna ut medelvärdet av en lista med värden");//Problemlösning_3
+            Console.WriteLine("4. Är en sträng/mening ett palindrom?");//Problemlösning_4
+            Console.WriteLine("5. Skapa delay på x antal sekunder");//Problemlösning_5
+            Console.WriteLine("6. Sortera några ord i bokstavsordning");//Problemlösning_6(WIP)
             Console.WriteLine("7. Kolla om ett tal är ett primtal");
             Console.WriteLine("8. Kolla vilka primtal som finns upp till ett visst tal");
             Console.WriteLine("9. Testa om ett nummer är 'PERFEKT'");
@@ -39,7 +43,7 @@ class Program
                         Console.Write("Skriv in hojd: ");
                         hojd = float.Parse(Console.ReadLine());
                         hypo = FuncHypotenusa(bas, hojd);
-                        Console.WriteLine("Hypotenusan är: " + hypo);
+                        Console.WriteLine("Hypotenusan är: " + Math.Sqrt(hypo));
                         break;
                     }
                 case 2:
@@ -196,31 +200,61 @@ class Program
     }
     static float FuncHypotenusa(float bas, float hojd)
     {
+        //myCode
         float hypotenusa = 0;
+        hypotenusa = bas * bas + hojd * hojd;
+        return hypotenusa;
+
         // Gör en funktion som räknar ut hypotenusan när
         // man får reda på basen och höjden av en rätvinklig triangel
-        return hypotenusa;
+
     }
 
     static float FuncRArea(float bas, float hojd)
     {
+        //MyCode
         float area = 0;
+        area = bas * hojd;
+        return area;
+
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
-        return area;
+
     }
 
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
+        //MyCode
         float medel = 0;
-        // Du får en lista av användaren med massa heltals-siffror.
-        // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
+        medel = listaMedVarden.Sum() / antal;
         return medel;
+
+
     }
 
     static bool FuncIsPalindrom(string mening)
     {
+        //MyCode (hittad online och testad, vet inte om det finns något lättare sätt. Denna var svår...)
         bool palindrome = false;
+
+        try
+        {
+            int halfLength = mening.Length / 2;
+
+            string leftHalfString = mening.Substring(0, halfLength);
+
+            char[] reversedArray = mening.ToCharArray();
+            Array.Reverse(reversedArray);
+            string reversedString = new string(reversedArray);
+
+            string rightHalfStringReversed = reversedString.Substring(0, halfLength);
+
+            palindrome = leftHalfString == rightHalfStringReversed ? true : false;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
         // Ett palindrom är en sträng/mening/ord som läses likadant baklänges som framlänges se exemplen nedan.
         // Ex: "naturrutan", "kajak", "tillit", "mus rev inuits öra, sa röst i universum"
         // Man ignorerar whitespaces och komman (",") etc, bara bokstäverna betyder något.
@@ -229,13 +263,26 @@ class Program
 
     static void FuncDelay(int sekunder)
     {
-        // Skapa en funktion som ger en fördröjning på så många sekunder som användaren anger.
-        // Vid varje sekunds fördröjning ska funktionen skriva ut en punkt (ex: .... <- efter 4 sec)
+        //MyCode
+        for (int i = 0; i < sekunder; i++) 
+        {
+            Thread.Sleep(1000);
+            Console.WriteLine(1 + i + ".");               
+        }
+
     }
 
     static string FuncSortera(string ord)
     {
+        //MyCode(WIP)
+        string[] strings = new string[ord.Length];
         string sorteradString = "";
+        Array.Sort(strings);
+        foreach (string s in strings) 
+        {
+            Console.WriteLine(sorteradString);
+        }
+
         // Skapa en funktion som sorterar en sträng som kommer in i bokstavsordning.
         // Strängen som kommer in kommer innehålla flera ord, och det är de som ska sorteras i bokstavsordning.
         // Orden i strängen som kommer in kommer vara separerade med ett bindestreck, se exempel nedan.
@@ -301,5 +348,5 @@ class Program
         return decrypt;
     }
 
-    
+
 }
