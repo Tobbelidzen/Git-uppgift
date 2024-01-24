@@ -224,13 +224,16 @@ class Program
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
 
         // MH: Medelvärde = Värdet av alla tal / Antalet tal
-        // Få ut alla nummer för att sedan slå ihop dom för total värdet, 
-        for (int i = 0; i < antal;i++)
-        {
+        // Få ut alla nummer ur för att sedan slå ihop dom för total värdet
+        
+            int summa = 0;
+            for (int i = 0; i < antal; i++)
+            {
+                summa += listaMedVarden[i];
+            }
+            medel = summa / antal; //Tar inte med decimaltecken?
 
-        }
-       //float medel = listaMedVarden / antal;
-        return medel;
+            return medel;
     }
 
     static bool FuncIsPalindrom(string mening)
