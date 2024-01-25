@@ -202,7 +202,7 @@ class Program
          hypotenusa = ((float)(Math.Pow(bas, 2) + Math.Pow(hojd, 2)));
          hypotenusa = (float) (Math.Sqrt(Math.Pow(bas, 2) + Math.Pow(bas, 2)));
          return hypotenusa;
-        
+        //1 är KLAR!!!!
     }
 
     static float FuncRArea(float bas, float hojd)
@@ -210,15 +210,26 @@ class Program
         float area = 0;
         // Gör en funktion som räknar ut area av en rektangel med värdena som fås av användaren.
         // Returnera arean
+        //Arean= bas gånger två + hojd gånger två, gör så att användaren kan skriva in basen och höjden
+        area = bas * 2 + hojd * 2;
         return area;
+        //2 är KLAR!!!
     }
 
     static float FuncMedelvarde(int[] listaMedVarden, int antal)
     {
         float medel = 0;
+        int värden = 0;
         // Du får en lista av användaren med massa heltals-siffror.
         // Gör en funktion som räknar ut medelvärdet av siffrorna i denna lista. Returnera resultatet.
-        return medel;
+        //Finns en variabel för att lista medelvärden och ett får antal siffror?, bra att använda loops
+        //double avg = 
+        for (int i = 0; i < antal; i++)
+        {
+            värden = listaMedVarden[i] + värden;
+        }
+        medel = värden / antal;
+        return medel; 
     }
 
     static bool FuncIsPalindrom(string mening)
