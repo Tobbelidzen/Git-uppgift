@@ -226,7 +226,7 @@ class Program
         // MH: Medelvärde = Värdet av alla tal / Antalet tal
         // Få ut alla nummer ur för att sedan slå ihop dom för total värdet
         
-            int summa = 0;
+            float summa = 0;
             for (int i = 0; i < antal; i++)
             {
                 summa += listaMedVarden[i];
