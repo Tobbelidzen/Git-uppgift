@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Threading;
 class Program
 {
     static void Main()
@@ -230,21 +230,43 @@ class Program
         }
         medel = värden / antal;
         return medel; 
+        //3 är KLAR!!!
     }
 
     static bool FuncIsPalindrom(string mening)
     {
-        bool palindrome = false;
+        bool palindrome = false; 
+        string mening_bak ="";
+
         // Ett palindrom är en sträng/mening/ord som läses likadant baklänges som framlänges se exemplen nedan.
         // Ex: "naturrutan", "kajak", "tillit", "mus rev inuits öra, sa röst i universum"
         // Man ignorerar whitespaces och komman (",") etc, bara bokstäverna betyder något.
+        for (int i = 0; i < mening.Length; i++)
+        {
+            mening_bak += mening[mening.Length-i-1] ;
+            
+        }
+        if(mening == mening_bak)
+        {
+            palindrome = true;
+        }
+        Console.WriteLine(mening_bak);
+        
         return palindrome;
     }
+    //4 är KLAR!!!
 
     static void FuncDelay(int sekunder)
     {
         // Skapa en funktion som ger en fördröjning på så många sekunder som användaren anger.
         // Vid varje sekunds fördröjning ska funktionen skriva ut en punkt (ex: .... <- efter 4 sec)
+        for (int i = 0; i < sekunder; i++)
+        {
+            Console.Write(".");
+            Thread.Sleep(1000);
+        }
+         //5 är KLAR!!!
+        
     }
 
     static string FuncSortera(string ord)
