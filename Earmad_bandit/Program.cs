@@ -13,10 +13,11 @@ namespace Earmad_bandit
     {
         static void Main(string[] args)
         {
-            string LeverPull = "";
+
             int bet = 0;
             int Current_Tokens = 10;
-            Random slots = new Random();
+            Random rnd = new Random();
+
 
             Console.WriteLine("To play 'The one Armed Bandit,' you must first place a bet.\nPlace a bet with tokens below. You can only bet your maximum value of tokens, and you have to place a bet. \nYour currently have " + Current_Tokens + " tokens.");
             
@@ -25,6 +26,8 @@ namespace Earmad_bandit
 
             Console.WriteLine("Now it's time to pull the lever of the machine.\n Press 'P' to pull the lever...");
             FuncLever();
+            FuncDelay();
+            FuncResult();
 
             void FuncBet()
             {
@@ -48,29 +51,40 @@ namespace Earmad_bandit
                     {
                         Current_Tokens = Current_Tokens - bet;
                         break;
-                    }
-                    
-                
+                    }                                   
                 }
             }
 
             void FuncLever()
-            { 
-                
-
-                while (true) 
+            {
+                ConsoleKey Pull = ConsoleKey.P;
+                while (Console.ReadKey(true).Key != Pull)
                 {
-                   LeverPull = Console.ReadLine();
+                    // Nothing happens unless they press "P"
+                }
+                Console.WriteLine();
+                Console.WriteLine("Now wait for the machine to stop...");
+                return;
+            }
 
-                    if (LeverPull != "p" || LeverPull != "P")
-                    {
-                        Console.WriteLine("It only works if you press 'p' on your keyboard...");
-                    }
+            void FuncDelay()
+            {
+                int sek = 5;
 
+                for (int i = 0; i < sek; i++)
+                {
+                    Thread.Sleep(1000);
+                    Console.WriteLine(".");
                 }
 
 
-            
+            }
+
+            void FuncResult()
+            {
+                string[] slots = new string[3];
+
+
             }
 
         }
