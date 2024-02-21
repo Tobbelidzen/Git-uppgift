@@ -283,18 +283,41 @@ class Program
     {
         bool test = false;
         // Gör en funtion som kollar om en siffra är ett primtal. Om det är ett primtal skicka tillbaka "True", annars "False".
-        return test;
+        var limit = Math.Ceiling(Math.Sqrt(nummer));
+        if (nummer == 2) return true;
+        if (nummer == 1) return false;
+        for (int i = 2; i <= limit; ++i) 
+            if (nummer % i == 0)
+                return false;
+          return true;
+          //return test;
     }
+    // 7 är KLAR!!!!
 
     static int[] FuncHittaPrimtal(int nummer)
     {
         int[] primes = new int[100];
+        int arraycounter = 0;
+
         // Gör en funktion som hittar alla primtal upp till numret som skickats in till funktionen.
         // Spara primtalen i en array.
         // Returnera detta som en array.
         // Använd gärna funktionen som vi skapat för att kolla om ett tal är primtal (FuncIsPrime())
-        return primes;
+        // Kan göra en for loop,
+       
+        for (int i = 2; i <= nummer; ++i)
+        {
+            FuncIsPrime(i);
+            if (FuncIsPrime(i)== true)
+            {
+                primes[arraycounter] = i;
+                arraycounter++;
+            }
+        }
+      
+            return primes;
     }
+    // 8 är KLAR!!!
 
     static bool FuncPerfectNum(int nummer)
     {
@@ -327,6 +350,9 @@ class Program
         // Färdig kryptering av strängen "Tobias äger": ^ylsk}*Äqo|
         // Ovanstående är gjort för hand men är förhoppningsvis rätt. Varje bokstav 10 steg framåt i ASCII-tabellen.
         // Returnera krypterad text
+        //Gör en sträng med et värde, variabel för svaret, consolewriteline svar console svar någonting emellan 
+        String namn = "";
+        int svar;
         return krypt;
     }
 
